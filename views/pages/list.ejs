@@ -1,0 +1,18 @@
+<div id="list" v-cloak>
+  <a href="/">【首页】</a>
+  <ul>
+    <!-- ejs模版语法输出内容 -->
+    <li><%= title %></li>
+    <li><%= name %></li>
+    <!-- 循环输出数据 -->
+    <% people.forEach(person=>{%>
+    <li><%= person.name %></li>
+    <%}) %>
+  </ul>
+  <h1>TODO: Implement this page.</h1>
+  <p>
+    (See also <em>assets/styles/pages/list.less</em>,
+    <em>assets/js/pages/list.page.js</em>, and
+    <em>api/controllers/view-list.js</em>.)
+  </p>
+</div>
