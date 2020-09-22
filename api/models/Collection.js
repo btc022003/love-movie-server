@@ -24,4 +24,5 @@ module.exports = {
     },
   },
   tableName: 'collections',
+  schema: true, // 如果需要查询指定的字段，需要设置这个
 };

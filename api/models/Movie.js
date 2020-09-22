@@ -46,4 +46,5 @@ module.exports = {
     },
   },
   tableName: 'movies', // 设置数据库中的表名
+  schema: true, // 如果需要查询指定的字段，需要设置这个
 };
