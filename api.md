@@ -1,4 +1,153 @@
+#### 前台用户页面接口
+
+- 获取影片列表
+
+  ```
+  地址
+  	/api/v1/movies
+  参数
+  	参数都是可选的
+  	page			页码
+  	per				每页显示的数量
+  	name			影片名字
+  	category	分类id
+  请求方法
+  	get
+  返回数据
+  	
+  ```
+
+  
+
+- 获取影片详情
+
+  ```
+  地址
+  	/api/v1/movies/:id
+  请求方法
+  	get
+  返回数据
+  ```
+
+  
+
+- 用户注册
+
+  ```
+  地址
+  	/api/v1/auth/reg
+  参数
+  	userName	用户明
+  	password	密码
+  	nickName	昵称
+  	gender		性别
+  	avatar		头像
+  请求方法
+  	post
+  返回数据
+  ```
+
+  
+
+- 用户登录
+
+  ```
+  地址
+  	/api/v1/auth/login
+  参数
+  	userName	用户名
+  	password	密码
+  请求方法
+  	post
+  返回数据
+  ```
+
+- 修改用户信息
+
+  ```
+  地址
+  	/api/v1/users/info
+  参数
+  	nickName
+  	avatar
+  	gender
+  请求头
+  	token
+  请求方法
+  	put
+  返回数据
+  ```
+
+  
+
+- 获取用户信息
+
+  ```
+  地址
+  	/api/v1/users/info
+  参数
+  请求头
+  	token
+  请求方法
+  	get
+  返回数据
+  ```
+
+  
+
+- 修改密码
+
+  ```
+  地址
+  	/api/v1/user/change_pwd
+  参数
+  	oldPassword	原始密码
+  	newPassword	新密码
+  请求头
+  	token
+  请求方法
+  	post
+  返回数据
+  ```
+
+  
+
+- 加入收藏
+
+  ```
+  地址
+  	/api/v1/user/collections
+  参数
+  	movie	影片id
+  请求头
+  	token
+  请求方法
+  	post
+  返回数据
+  ```
+
+  
+
+- 删除收藏
+
+  ```
+  地址
+  	/api/v1/user/collections/:id
+  参数
+  请求头
+  	token
+  请求方法
+  	delete
+  返回数据
+  ```
+
+  
+
+
+
 #### 管理后台接口
+
+​	管理后台登录之外的接口需要在请求头中传递token
 
 - 登录
 
@@ -133,15 +282,14 @@
     地址
       /api/v1/admin/user/:id
     参数
-      oldPassword		原始密码
-      newPassword		新密码
+      password		新密码
     请求方法
       put
     ```
-
-  - 用户收藏
-
-    ```
+    
+- 用户收藏
+  
+  ```
     地址
       /api/v1/admin/user_collections/:id
     请求方法

@@ -8,6 +8,7 @@
 module.exports = {
   async index(req, res) {
     let collections = [];
+    // 如果是登录的用户，获取当前用户的收藏信息，用于判断当前影片有没有被收藏过
     try {
       if (req.headers.token) {
         const user = await sails.helpers.decodeToken(req.headers.token);
@@ -18,7 +19,7 @@ module.exports = {
         collections = userCollections.map((item) => item.id);
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
     // console.log(collections);
     // console.log(req.query);
@@ -62,9 +63,29 @@ module.exports = {
     });
   },
   async one(req, res) {
+    let collections = [];
+    // 如果是登录的用户，获取当前用户的收藏信息，用于判断当前影片有没有被收藏过
+    try {
+      if (req.headers.token) {
+        const user = await sails.helpers.decodeToken(req.headers.token);
+        const userCollections = await Collection.find({
+          where: { user: user.id },
+          select: ['id'],
+        });
+        collections = userCollections.map((item) => item.id);
+      }
+    } catch (err) {
+      // console.log(err);
+    }
     const model = await Movie.findOne({ id: req.params.id }).populate(
       'category'
     );
-    res.json(model);
+    // 修改浏览次数
+    await Movie.updateOne({
+      id: model.id,
+    }).set({
+      views: model.views + 1,
+    });
+    res.json({ ...model, isCollectioned: collections.indexOf(model.id) > -1 });
   },
 };

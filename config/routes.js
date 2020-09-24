@@ -68,6 +68,8 @@ module.exports.routes = {
   'POST /api/v1/user/change_pwd': {
     action: 'user/change-password',
   },
+  'GET /api/v1/users/info': 'api/UsersController.info',
+  'PUT /api/v1/users/info': 'api/UsersController.changeInfo',
   'POST /api/v1/user/collections': 'CollectionsController.create',
   'DELETE /api/v1/user/collections/:id': 'CollectionsController.del',
   '/api/v1/admin/*': [

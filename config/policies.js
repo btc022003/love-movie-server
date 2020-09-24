@@ -21,4 +21,5 @@ module.exports.policies = {
   // 'products/index': 'isLogined',
   'user/change-password': 'isLogined',
   CollectionsController: { '*': 'isLogined' },
+  'api/UsersController': { '*': 'isLogined' },
 };
