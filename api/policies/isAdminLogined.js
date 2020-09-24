@@ -18,7 +18,7 @@ module.exports = async (req, res, next) => {
         });
       }
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return res.status(401).json({
         code: 0,
         info: '请先登录',

@@ -49,6 +49,7 @@ module.exports.routes = {
   'POST /api/v1/auth/reg': { action: 'user/reg' },
   'POST /api/v1/auth/manager_login': { action: 'manager/login' },
   'POST /api/v1/common/upload_file': 'CommonController.uploadFile',
+  'GET /api/v1/movie_categories': 'api/MovieCategoriesController.all',
   'GET /api/v1/movies': 'api/MoviesController.index',
   'GET /api/v1/movies/:id': 'api/MoviesController.one',
   // 所有的/api/v1/user/*中的路由时都需要先验证是否登录
