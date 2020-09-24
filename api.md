@@ -105,7 +105,7 @@
 
   ```
   地址
-  	/api/v1/user/change_pwd
+  	/api/v1/users/change_pwd
   参数
   	oldPassword	原始密码
   	newPassword	新密码
@@ -145,7 +145,7 @@
 
 #### 管理后台接口
 
-​ 管理后台登录之外的接口需要在请求头中传递 token
+ 管理后台登录之外的接口需要在请求头中传递 token
 
 - 登录
 

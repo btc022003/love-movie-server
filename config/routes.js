@@ -66,7 +66,7 @@ module.exports.routes = {
   //     action: 'user/change-password',
   //   },
   // ],
-  'POST /api/v1/user/change_pwd': {
+  'POST /api/v1/users/change_pwd': {
     action: 'user/change-password',
   },
   'GET /api/v1/users/info': 'api/UsersController.info',
