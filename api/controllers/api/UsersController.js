@@ -27,7 +27,7 @@ module.exports = {
   },
   async collections(req, res) {
     const user = req.user;
-    const data = await this.collections.find({ user: user.id });
+    const data = await Collection.find({ user: user.id }).populate('movie');
     res.json(data);
   },
 };

@@ -70,7 +70,7 @@ module.exports.routes = {
     action: 'user/change-password',
   },
   'GET /api/v1/users/info': 'api/UsersController.info',
-  'GET /api/v1/users/collections': 'api/UsersController.collections',
+  'GET /api/v1/user/collections': 'api/UsersController.collections',
   'PUT /api/v1/users/info': 'api/UsersController.changeInfo',
   'POST /api/v1/user/collections': 'CollectionsController.create',
   'DELETE /api/v1/user/collections/:id': 'CollectionsController.del',
