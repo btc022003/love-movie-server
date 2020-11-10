@@ -25,4 +25,9 @@ module.exports = {
       info: '修改个人信息成功',
     });
   },
+  async collections(req, res) {
+    const user = req.user;
+    const data = await this.collections.find({ user: user.id });
+    res.json(data);
+  },
 };
